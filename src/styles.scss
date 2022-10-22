@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Barlow:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+
+:root {
+  --main-font-color: #FFFFFF;
+  --black-color: #0B0D17;
+  --middle-color: #D0D6F9;
+  --barlow-font: 'Barlow', 'sans-serif';
+  --barlow-condensed-font: 'Barlow Condensed', 'sans-serif';
+  --bellefair-font: 'Bellefair', 'sans-serif';
+}
+
+h1 {
+  color: var(--main-font-color);
+}
+
+body {
+  margin: 0;
+  background: url("assets/img/home/background-home-desktop.jpg") no-repeat;
+  background-size: cover;
+}
+
+#welcome-text-section {
+  float: left;
+  color: white;
+  margin-top: 30vh;
+  margin-left: 9vw;
+  width: 31vw;
+}
+
+#welcome-text-section h4 {
+  font-size: 28px;
+  color: white;
+  font-family: var(--barlow-condensed-font);
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+
+#welcome-text-section .space-text {
+  font-size: 150px;
+  color: white;
+  font-family: var(--bellefair-font);
+  margin: 0 0 38px;
+  text-transform: uppercase;
+}
+
+#welcome-text-section p {
+  font-size: 18px;
+  color: white;
+  font-family: var(--barlow-font);
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.explore-btn-section {
+  float: right;
+  width: 31vw;
+  margin-top: 55vh;
+}
+
+.btn-explore {
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  padding: 100px 50px;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: var(--bellefair-font);
+  transition: .2s ease-out;
+}
+
+.btn-explore:hover {
+  box-shadow: 0 0 0 70px rgba(255, 255, 255, 0.2);
+}
