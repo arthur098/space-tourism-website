@@ -2,134 +2,250 @@
 
 .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
-.content section {
-  margin-top: 5vh;
-  width: 50vw;
+.planet-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.planet-section h1 {
-  margin: 0 0 5vw 10vw;
-}
-
-.description-section h1 {
-  font-family: var(--bellefair-font);
-  font-size: 100px;
-  letter-spacing: 2px;
-  font-weight: lighter;
-  text-transform: uppercase;
-  margin: 0 0 5px 0;
-}
-
-.description-section > p {
-  font-family: var(--barlow-font);
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: var(--main-font-color);
-  font-weight: lighter;
-  width: 50%;
-}
-
-.destination-planet-header {
-  font-family: var(--barlow-condensed-font);
-  font-size: 28px;
-  text-transform: uppercase;
-  font-weight: lighter;
-  letter-spacing: 2px;
-}
-
-.destination-planet-header > span {
-  font-weight: bolder !important;
-  color: grey;
+.description-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    letter-spacing: 0;
+    font-weight: lighter;
+  }
 }
 
 .planet-list {
   list-style-type: none;
   padding: 0;
   display: flex;
+  width: 100%;
+  justify-content: space-evenly;
   flex-direction: row;
-  margin-top: 15vh;
+
+  li {
+    padding-left: 5px;
+  }
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--barlow-condensed-font);
+    font-size: 16px;
+    color: var(--secondary-color);
+    letter-spacing: 2px;
+  }
+
+  a.active {
+    color: var(--main-font-color);
+  }
+
+  a.active:after {
+    transform: scaleX(1);
+    transform-origin: 0;
+    opacity: 1;
+  }
+
+  a:after {
+    display:block;
+    content: '';
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+    opacity: 0.5;
+  }
+
+  a:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0;
+  }
 }
 
-.planet-list li {
-  padding-left: 5px;
-}
-
-.planet-list a {
-  text-transform: uppercase;
-  text-decoration: none;
-  font-family: var(--barlow-condensed-font);
-  font-size: 16px;
-  color: var(--main-font-color);
-  letter-spacing: 2px;
-}
-
-.planet-list a.active:after {
-  transform: scaleX(1);
-  transform-origin: 0;
-}
-
-.planet-list a:after {
-  display:block;
-  content: '';
-  padding-bottom: 5px;
-  border-bottom: 2px solid white;
-  transform: scaleX(0);
-  transition: transform .3s ease-in-out;
-}
-
-.planet-list a:hover:after {
-  transform: scaleX(1);
-  transform-origin: 0;
-}
-
-.planets {
+.carousel {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  max-width: 100vw;
   overflow: hidden;
-}
+  margin: 30px 0;
 
-.planets img {
-  width: 50%;
-  padding: 0 25%;
-  transition: .2s;
+  img {
+    width: 60%;
+    padding: 0 20%;
+    transition: .2s;
+  }
 }
 
 .travel-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-
-}
-
-.travel-info-distance {
-  padding-right: 100px;
-}
-
-.travel-info-title {
-  font-family: var(--barlow-condensed-font) !important;
-  color: var(--main-font-color);
-  font-size: 14px !important;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: lighter;
   width: 100%;
 }
 
-.travel-info-value {
-  font-family: var(--bellefair-font) !important;
-  font-size: 28px !important;
-  color: var(--main-font-color);
-  text-transform: uppercase;
-  width: 100%;
+.travel-info-distance,
+.travel-info-time{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 0;
+
+  .travel-info-title {
+    margin-bottom: 15px;
+  }
+
+  .travel-info-description {
+    margin-bottom: 30px;
+  }
 }
 
 .divider {
   border-bottom: 1px solid rgba(255, 255, 255, .2);
-  width: 50%;
+  width: 100%;
+  margin: 30px 0;
+}
+
+@media only screen and (min-width: 1025px) {
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .content section {
+    margin-top: 5vh;
+    width: 50vw;
+  }
+
+  .planet-section h1 {
+    margin: 0 0 5vw 10vw;
+  }
+
+  .description-section h1 {
+    font-family: var(--bellefair-font);
+    font-size: 100px;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+  }
+
+  .description-section > p {
+    font-family: var(--barlow-font);
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--main-font-color);
+    font-weight: lighter;
+    width: 50%;
+  }
+
+  .destination-planet-header {
+    font-family: var(--barlow-condensed-font);
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 2px;
+  }
+
+  .destination-planet-header > span {
+    font-weight: bolder !important;
+    color: grey;
+  }
+
+  .planet-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15vh;
+
+    li {
+      padding-left: 5px;
+    }
+
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: var(--barlow-condensed-font);
+      font-size: 16px;
+      color: var(--main-font-color);
+      letter-spacing: 2px;
+    }
+
+    a.active:after {
+      transform: scaleX(1);
+      transform-origin: 0;
+    }
+
+    a:after {
+      display:block;
+      content: '';
+      padding-bottom: 5px;
+      border-bottom: 2px solid white;
+      transform: scaleX(0);
+      transition: transform .3s ease-in-out;
+    }
+
+    a:hover:after {
+      transform: scaleX(1);
+      transform-origin: 0;
+    }
+  }
+
+  .planets {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 100vw;
+    overflow: hidden;
+
+    img {
+      width: 50%;
+      padding: 0 25%;
+      transition: .2s;
+    }
+  }
+
+  .travel-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+  .travel-info-distance {
+    padding-right: 100px;
+  }
+
+  .travel-info-title {
+    font-family: var(--barlow-condensed-font) !important;
+    color: var(--main-font-color);
+    font-size: 14px !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: lighter;
+    width: 100%;
+  }
+
+  .travel-info-value {
+    font-family: var(--bellefair-font) !important;
+    font-size: 28px !important;
+    color: var(--main-font-color);
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  .divider {
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    width: 50%;
+  }
 }

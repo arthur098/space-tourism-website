@@ -1,0 +1,68 @@
+.crew {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+}
+
+.crew-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crew-position {
+  font-size: 16px;
+  color: grey;
+}
+
+.crew-member-name {
+  font-size: 24px;
+  padding: 12px 0;
+}
+
+.carousel {
+  align-items: baseline;
+  border-bottom: grey solid 1px;
+  margin: 20px 0 !important;
+
+  img {
+    width: 50%;
+    padding: 0 25%;
+  }
+}
+
+.carousel-buttons {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  li {
+    &:first-child {
+      margin-left: 0;
+    }
+    margin-left: 15px;
+    button {
+      cursor: pointer;
+      width: 12px;
+      height: 12px;
+      border: none;
+      border-radius: 50%;
+      opacity: 0.3;
+      background-color: white;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &.selected {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.description-section {
+  margin-bottom: 20px;
+}

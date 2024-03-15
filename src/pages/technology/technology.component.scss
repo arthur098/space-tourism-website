@@ -1,0 +1,49 @@
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.technology-name {
+  margin: 10px 0;
+}
+
+.description {
+  margin: 20px 0;
+}
+
+.carousel {
+  margin: 0;
+
+  img {
+    height: 200px;
+    width: 100% !important;
+    padding: 0 !important;
+    transition: .2s;
+  }
+}
+.carousel-buttons {
+  li {
+    button {
+      border-radius: 50%;
+      color: var(--main-font-color);
+      background-color: transparent;
+      width: 40px;
+      height: 40px;
+      font-family: var(--bellefair-font);
+      border: 0.5px solid #45464f;
+      font-size: 1.2rem;
+      opacity: 1 !important;
+
+      &:hover {
+        border: 1px solid var(--main-font-color);
+      }
+
+      &.selected {
+        opacity: 1;
+        background-color: var(--main-font-color);
+        color: #0B0D17 !important;
+        border: 0.5px solid var(--main-font-color);
+      }
+    }
+  }
+}

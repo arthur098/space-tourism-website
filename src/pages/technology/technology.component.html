@@ -1,0 +1,28 @@
+<div class="content no-padding">
+  <section class="title-section">
+    <h5 class="title-section-header"><span>03</span>Space Launch 101</h5>
+    <div class="carousel">
+      <img id="technology-0" src="assets/img/technology/image-launch-vehicle-landscape.jpg" alt="Launch vehicle image">
+      <img id="technology-1" src="assets/img/technology/image-spaceport-landscape.jpg" alt="Spaceport image">
+      <img id="technology-2" src="assets/img/technology/image-space-capsule-landscape.jpg" alt="Space Capsule image">
+    </div>
+
+    <ul class="carousel-buttons">
+      <li *ngFor="let technology of technologyList; index as i; first as isFirst;">
+        <button type="button"
+                (click)="selectTechnology($event, i)"
+                [ngClass]="{ 'selected': isFirst }">{{ i + 1 }}</button>
+      </li>
+    </ul>
+  </section>
+
+  <section class="description-section content">
+    <div class="divider"></div>
+
+    <div class="info">
+      <h6 class="travel-info-title subheading-2 secondary-color-text">The termonology is...</h6>
+      <h6 class="travel-info-title technology-name">{{ selectedTechnology.title }}</h6>
+      <p class="description">{{ selectedTechnology.description }}</p>
+    </div>
+  </section>
+</div>

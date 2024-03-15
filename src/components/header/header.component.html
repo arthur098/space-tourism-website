@@ -1,15 +1,19 @@
 <section>
   <header>
     <nav>
-      <a href="javascript:void(0);" routerLink="/" aria-label="Icone voltar home" title="Voltar home">
-        <img src="assets/img/icon/logo.svg" alt="">
-      </a>
+      <button type="button" class="home-icon" (click)="redirect('home')" aria-label="Icone voltar home" title="Go back home">
+        Home icon
+      </button>
       <div id="linha-home-menu"></div>
+      <button type="button" class="menu-icon" aria-label="Icone voltar home" title="Menu" (click)="onClickMenu()">
+        Menu icon
+      </button>
       <ul id="nav-menu-list">
-        <li><a href="javascript:void(0);" routerLink="home" routerLinkActive="active"><strong>00</strong> Home</a></li>
-        <li><a href="javascript:void(0);" routerLink="destination" routerLinkActive="active"><strong>01</strong> Destination</a></li>
-        <li><a href="javascript:void(0)" routerLinkActive="active"><strong>02</strong> Crew</a></li>
-        <li><a href="javascript:void(0)" routerLinkActive="active"><strong>03</strong> Technology</a></li>
+        <li id="close-menu"><button type="button" (click)="closeMenu()">close menu</button></li>
+        <li><a href="javascript:void(0);" (click)="redirect('home')" routerLinkActive="active"><strong>00</strong> Home</a></li>
+        <li><a href="javascript:void(0);" (click)="redirect('destination')" routerLinkActive="active"><strong>01</strong> Destination</a></li>
+        <li><a href="javascript:void(0)" (click)="redirect('crew')" routerLinkActive="active"><strong>02</strong> Crew</a></li>
+        <li><a href="javascript:void(0)" (click)="redirect('technology')" routerLinkActive="active"><strong>03</strong> Technology</a></li>
       </ul>
     </nav>
   </header>

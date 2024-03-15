@@ -5,75 +5,190 @@
 :root {
   --main-font-color: #FFFFFF;
   --black-color: #0B0D17;
-  --middle-color: #D0D6F9;
+  --secondary-color: #D0D6F9;
   --barlow-font: 'Barlow', 'sans-serif';
   --barlow-condensed-font: 'Barlow Condensed', 'sans-serif';
   --bellefair-font: 'Bellefair', 'sans-serif';
+  font-size: 15px;
+  @media only screen and (min-width: 992px) {
+
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 767px) {
+    font-size: 16px;
+  }
 }
 
 h1 {
   color: var(--main-font-color);
+  font-family: var(--bellefair-font);
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 80px;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h2 {
+  @extend h1;
+  font-size: 56px;
+}
+
+h3 {
+  @extend h1;
+  font-size: 3.5rem;
+}
+
+h4 {
+  @extend h1;
+  font-size: 16px;
+}
+
+h5 {
+  @extend h1;
+  font-size: 16px;
+  letter-spacing: 4.75px;
+}
+
+h6 {
+  @extend h1;
+  font-size: 28px;
+}
+
+.subheading-2 {
+  font-family: var(--barlow-condensed-font);
+  color: var(--main-font-color);
+  font-size: 14px;
+  letter-spacing: 2.35px;
+}
+
+.nav-text {
+  font-family: var(--barlow-condensed-font);
+  color: var(--main-font-color);
+  font-size: 0.875rem;
+  letter-spacing: 2.35px;
+}
+
+.secondary-color-text {
+  color: var(--secondary-color) !important;
+}
+
+p {
+  font-family: var(--barlow-font);
+  color: var(--main-font-color);
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 767px) {
+  body {
+    background: url("assets/img/home/background-home-tablet.jpg") no-repeat;
+    &.destination {
+      background: url("assets/img/destination/background-destination-tablet.jpg") no-repeat;
+    }
+    &.crew {
+      background: url("assets/img/crew/background-crew-tablet.jpg") no-repeat;
+    }
+    &.technology {
+      background: url("assets/img/technology/background-technology-tablet.jpg") no-repeat;
+    }
+  }
+
+  h1 {
+    font-size: 9.375rem;
+  }
+
+  h2 {
+    font-size: 6.25rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  h5 {
+    font-size: 1.75rem;
+  }
+
+  h6 {
+    font-size: 1.75rem;
+  }
+
+  .subheading-2 {
+    font-size: 0.875rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    background: url("assets/img/home/background-home-desktop.jpg") no-repeat;
+    &.destination {
+      background: url("assets/img/destination/background-destination-desktop.jpg") no-repeat;
+    }
+    &.crew {
+      background: url("assets/img/crew/background-crew-desktop.jpg") no-repeat;
+    }
+    &.technology {
+      background: url("assets/img/technology/background-technology-desktop.jpg") no-repeat;
+    }
+  }
+
+  h1 {
+    font-size: 9.375rem;
+  }
+
+  h2 {
+    font-size: 6.25rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  h5 {
+    font-size: 1.75rem;
+  }
+
+  h6 {
+    font-size: 1.75rem;
+  }
+
+  .subheading-2 {
+    font-size: 0.875rem;
+  }
 }
 
 body {
+  background: url("assets/img/home/background-home-mobile.jpg") no-repeat;
+  &.destination {
+    background: url("assets/img/destination/background-destination-mobile.jpg") no-repeat;
+  }
+  &.crew {
+    background: url("assets/img/crew/background-crew-mobile.jpg") no-repeat;
+  }
+  &.technology {
+    background: url("assets/img/technology/background-technology-mobile.jpg") no-repeat;
+  }
   margin: 0;
-  background: url("assets/img/home/background-home-desktop.jpg") no-repeat;
-  background-size: cover;
+  background-size: cover !important;
 }
 
-#welcome-text-section {
-  float: left;
-  color: white;
-  margin-top: 30vh;
-  margin-left: 9vw;
-  width: 31vw;
+.description {
+  color: var(--secondary-color) !important;
+  text-align: center;
 }
 
-#welcome-text-section h4 {
-  font-size: 28px;
-  color: white;
-  font-family: var(--barlow-condensed-font);
-  font-weight: 200;
-  letter-spacing: 2px;
-  margin: 0 0 24px;
-  text-transform: uppercase;
-}
-
-#welcome-text-section .space-text {
-  font-size: 150px;
-  color: white;
-  font-family: var(--bellefair-font);
-  margin: 0 0 38px;
-  text-transform: uppercase;
-}
-
-#welcome-text-section p {
-  font-size: 18px;
-  color: white;
-  font-family: var(--barlow-font);
-  font-weight: 200;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-.explore-btn-section {
-  float: right;
-  width: 31vw;
-  margin-top: 55vh;
-}
-
-.btn-explore {
-  color: black;
-  background-color: white;
-  border-radius: 50%;
-  padding: 100px 50px;
-  font-size: 32px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: var(--bellefair-font);
-  transition: .2s ease-out;
-}
-
-.btn-explore:hover {
-  box-shadow: 0 0 0 70px rgba(255, 255, 255, 0.2);
+.text-center {
+  text-align: center;
 }

@@ -1,34 +1,35 @@
 <div class="content">
-  <section class="planet-section">
-    <h1 class="destination-planet-header"><span>01</span> Pick your Destination</h1>
-    <div class="planets">
-      <img src="assets/img/destination/image-moon.png" alt="Moon Image">
-      <img src="assets/img/destination/image-mars.png" alt="Mars Image">
-      <img src="assets/img/destination/image-europa.png" alt="Europa Image">
-      <img src="assets/img/destination/image-titan.png" alt="Titan Image">
+  <section class="title-section">
+    <h5 class="title-section-header"><span>01</span> Pick your Destination</h5>
+    <div class="carousel">
+      <img id="moon-img" src="assets/img/destination/image-moon.png" alt="Moon Image">
+      <img id="mars-img" src="assets/img/destination/image-mars.png" alt="Mars Image">
+      <img id="europa-img" src="assets/img/destination/image-europa.png" alt="Europa Image">
+      <img id="titan-img" src="assets/img/destination/image-titan.png" alt="Titan Image">
     </div>
   </section>
   <section class="description-section">
     <ul class="planet-list">
-      <li><a (click)="onClick(0, $event)" class="planet-anchor active" href="javascript:void(0);">Moon</a></li>
-      <li><a (click)="onClick(1, $event)" class="planet-anchor" href="javascript:void(0);">Mars</a></li>
-      <li><a (click)="onClick(2, $event)" class="planet-anchor" href="javascript:void(0);">Europa</a></li>
-      <li><a (click)="onClick(3, $event)" class="planet-anchor" href="javascript:void(0);">Titan</a></li>
+      <li *ngFor="let planet of planets; index as i; first as isFirst;">
+        <a (click)="onClick(i, $event)"
+           [attr.data-image]="'#' + planet.name.toLowerCase() + '-img'"
+           [ngClass]="{'active': isFirst}" class="planet-anchor" href="javascript:void(0);">{{planet.name}}</a>
+      </li>
     </ul>
-    <h1>Moon</h1>
-    <p>See our planet as you've never seen it before. A perfect trip away to help regain perspective and come back refreshed. While you're there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+    <h2 [innerText]="selectedPlanet.name"></h2>
+    <p class="description" [innerText]="selectedPlanet.description"></p>
 
     <div class="divider"></div>
 
     <div class="travel-info">
       <div class="travel-info-distance">
-        <p class="travel-info-title">Avg. Distance</p>
-        <p class="travel-info-value">384,400 KM</p>
+        <h6 class="travel-info-title subheading-2 secondary-color-text">Avg. Distance</h6>
+        <h6 class="travel-info-description" [innerText]="selectedPlanet.distance + ' KM'"></h6>
       </div>
 
       <div class="travel-info-time">
-        <p class="travel-info-title">Est. Travel Time</p>
-        <p class="travel-info-value">3 Days</p>
+        <h6 class="travel-info-title subheading-2 secondary-color-text">Est. Travel Time</h6>
+        <h6 class="travel-info-description" [innerText]="selectedPlanet.travelTime"></h6>
       </div>
 
     </div>
