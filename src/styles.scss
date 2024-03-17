@@ -9,6 +9,8 @@
   --barlow-font: 'Barlow', 'sans-serif';
   --barlow-condensed-font: 'Barlow Condensed', 'sans-serif';
   --bellefair-font: 'Bellefair', 'sans-serif';
+  --tablet-breakpoint: 676px;
+  --desktop-breakpoint: 992px;
   font-size: 15px;
   @media only screen and (min-width: 992px) {
 
@@ -85,15 +87,21 @@ p {
 
 @media only screen and (min-width: 767px) {
   body {
-    background: url("assets/img/home/background-home-tablet.jpg") no-repeat;
+    background: url("assets/img/home/background-home-tablet.jpg") no-repeat !important;
     &.destination {
-      background: url("assets/img/destination/background-destination-tablet.jpg") no-repeat;
+      background: url("assets/img/destination/background-destination-tablet.jpg") no-repeat !important;
+      background-size: cover !important;
+      background-position: center;
     }
     &.crew {
-      background: url("assets/img/crew/background-crew-tablet.jpg") no-repeat;
+      background: url("assets/img/crew/background-crew-tablet.jpg") no-repeat !important;
+      background-size: cover !important;
+      background-position: center;
     }
     &.technology {
-      background: url("assets/img/technology/background-technology-tablet.jpg") no-repeat;
+      background: url("assets/img/technology/background-technology-tablet.jpg") no-repeat !important;
+      background-size: cover !important;
+      background-position: center;
     }
   }
 
@@ -102,7 +110,7 @@ p {
   }
 
   h2 {
-    font-size: 6.25rem;
+    font-size: 4.75rem;
   }
 
   h3 {
@@ -128,15 +136,15 @@ p {
 
 @media only screen and (min-width: 992px) {
   body {
-    background: url("assets/img/home/background-home-desktop.jpg") no-repeat;
+    background: url("assets/img/home/background-home-desktop.jpg") no-repeat !important;
     &.destination {
-      background: url("assets/img/destination/background-destination-desktop.jpg") no-repeat;
+      background: url("assets/img/destination/background-destination-desktop.jpg") no-repeat !important;
     }
     &.crew {
-      background: url("assets/img/crew/background-crew-desktop.jpg") no-repeat;
+      background: url("assets/img/crew/background-crew-desktop.jpg") no-repeat !important;
     }
     &.technology {
-      background: url("assets/img/technology/background-technology-desktop.jpg") no-repeat;
+      background: url("assets/img/technology/background-technology-desktop.jpg") no-repeat !important;
     }
   }
 

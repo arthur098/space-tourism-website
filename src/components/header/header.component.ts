@@ -29,21 +29,22 @@ export class HeaderComponent implements OnInit {
   }
 
   closeMenu(): void {
-    this.navMenu.style.display = 'none';
-    // this.navMenu.style.width = '0';
-    // this.navMenu.style.padding = '0';
-    this.htmlBody.style.overflow = '';
+    if (document.getElementById('#close-menu').style.display !== 'none') {
+      this.navMenu.style.display = 'none';
+      // this.navMenu.style.width = '0';
+      // this.navMenu.style.padding = '0';
+      this.htmlBody.style.overflow = '';
+    }
   }
 
   redirect(redirectTo: string): void {
-    this.router.navigate([redirectTo]);
     if (redirectTo !== 'home') {
       this.htmlBody.removeAttribute('class');
       this.htmlBody.classList.add(redirectTo);
     } else {
       this.htmlBody.removeAttribute('class');
     }
-    this.closeMenu();
+    // this.closeMenu();
   }
 
   onClickMenu(): void {

@@ -61,6 +61,23 @@
   box-shadow: 0 0 0 70px rgba(255, 255, 255, 0.2);
 }
 
+@media only screen and (min-width: 767px) {
+
+  .home-main {
+    margin: 80px 130px 0 130px;
+  }
+
+  .explore-btn-section {
+    margin-top: 15vh;
+  }
+
+  .btn-explore {
+    border-radius: 50%;
+    padding: 80px 40px;
+    font-size: 1.8rem;
+  }
+}
+
 @media only screen and (min-width: 1025px) {
   #welcome-text-section {
     float: left;
