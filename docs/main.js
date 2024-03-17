@@ -859,10 +859,8 @@ class HeaderComponent {
         this.closeMenu();
     }
     closeMenu() {
-        if (document.getElementById('#close-menu').style.display !== 'none') {
+        if (document.getElementById('close-menu').style.display !== 'none') {
             this.navMenu.style.display = 'none';
-            // this.navMenu.style.width = '0';
-            // this.navMenu.style.padding = '0';
             this.htmlBody.style.overflow = '';
         }
     }
@@ -874,11 +872,9 @@ class HeaderComponent {
         else {
             this.htmlBody.removeAttribute('class');
         }
-        // this.closeMenu();
+        this.closeMenu();
     }
     onClickMenu() {
-        // this.navMenu.style.width = '200px';
-        // this.navMenu.style.padding = '30px';
         if (this.navMenu.style.display === 'block') {
             this.htmlBody.style.overflow = '';
             this.navMenu.style.display = 'none';
