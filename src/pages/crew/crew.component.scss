@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .crew {
   display: flex;
   flex-direction: row;
@@ -70,10 +72,13 @@
 }
 
 .description-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: $tablet-breakpoint) {
 
   .info {
     margin-top: 30px;
@@ -96,7 +101,71 @@
     flex-direction: column-reverse;
   }
 
+  .carousel-buttons {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
   .description-section {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
     margin: 0 130px;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+
+  .title-section-header {
+    margin-left: 80px;
+    font-size: 28px;
+  }
+
+  .description-section {
+    margin: 0 80px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .crew-position {
+    font-size: 32px;
+  }
+
+  .crew-member-name {
+    font-size: 56px;
+  }
+
+  .info {
+    align-items: start !important;
+  }
+
+  .description {
+    font-size: 18px;
+    text-align: justify;
+  }
+
+  .carousel {
+    border-bottom: none;
+    margin: 0 !important;
+  }
+
+  .title-section {
+    align-items: initial !important;
+  }
+
+  .carousel-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .section-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .carousel-buttons {
+    margin-top: 80px;
+    margin-bottom: 0;
   }
 }

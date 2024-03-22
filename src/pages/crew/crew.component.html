@@ -11,7 +11,9 @@
         <img id="crew-member-2" src="assets/img/crew/image-victor-glover.webp" alt="Pilot image">
         <img id="crew-member-3" src="assets/img/crew/image-anousheh-ansari.webp" alt="Flight Engineer image">
       </div>
+    </section>
 
+    <section class="description-section">
       <ul class="carousel-buttons">
         <li *ngFor="let crewMember of crewMemberList; index as i; first as isFirst;">
           <button type="button"
@@ -19,9 +21,7 @@
                   (click)="selectCrewMember($event, i)">&nbsp;</button>
         </li>
       </ul>
-    </section>
 
-    <section class="description-section">
       <div class="divider"></div>
 
       <div class="info">

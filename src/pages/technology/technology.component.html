@@ -1,28 +1,35 @@
 <div class="content no-padding">
-  <section class="title-section">
-    <h5 class="title-section-header"><span>03</span>Space Launch 101</h5>
-    <div class="carousel">
-      <img id="technology-0" src="assets/img/technology/image-launch-vehicle-landscape.jpg" alt="Launch vehicle image">
-      <img id="technology-1" src="assets/img/technology/image-spaceport-landscape.jpg" alt="Spaceport image">
-      <img id="technology-2" src="assets/img/technology/image-space-capsule-landscape.jpg" alt="Space Capsule image">
-    </div>
+  <h5 class="title-section-header"><span>03</span>Space Launch 101</h5>
+  <div class="technology-section-wrapper">
+    <section class="title-section">
+      <div class="carousel">
+        <img class="technology-0 d-none-lg" src="assets/img/technology/image-launch-vehicle-landscape.jpg" alt="Launch vehicle image">
+        <img class="technology-1 d-none-lg" src="assets/img/technology/image-spaceport-landscape.jpg" alt="Spaceport image">
+        <img class="technology-2 d-none-lg" src="assets/img/technology/image-space-capsule-landscape.jpg" alt="Space Capsule image">
+        <img class="technology-0 d-none-md" src="assets/img/technology/image-launch-vehicle-portrait.jpg" alt="Launch vehicle image">
+        <img class="technology-1 d-none-md" src="assets/img/technology/image-spaceport-portrait.jpg" alt="Spaceport image">
+        <img class="technology-2 d-none-md" src="assets/img/technology/image-space-capsule-portrait.jpg" alt="Space Capsule image">
+      </div>
+    </section>
 
-    <ul class="carousel-buttons">
-      <li *ngFor="let technology of technologyList; index as i; first as isFirst;">
-        <button type="button"
-                (click)="selectTechnology($event, i)"
-                [ngClass]="{ 'selected': isFirst }">{{ i + 1 }}</button>
-      </li>
-    </ul>
-  </section>
+    <section class="description-section">
+      <div class="divider"></div>
 
-  <section class="description-section content">
-    <div class="divider"></div>
+      <div class="info">
+        <ul class="carousel-buttons">
+          <li *ngFor="let technology of technologyList; index as i; first as isFirst;">
+            <button type="button"
+                    (click)="selectTechnology($event, i)"
+                    [ngClass]="{ 'selected': isFirst }">{{ i + 1 }}</button>
+          </li>
+        </ul>
 
-    <div class="info">
-      <h6 class="travel-info-title subheading-2 secondary-color-text">The termonology is...</h6>
-      <h6 class="travel-info-title technology-name">{{ selectedTechnology.title }}</h6>
-      <p class="description">{{ selectedTechnology.description }}</p>
-    </div>
-  </section>
+        <div class="info-wrapper">
+          <h6 class="travel-info-title subheading-2 secondary-color-text">The termonology is...</h6>
+          <h6 class="travel-info-title technology-name">{{ selectedTechnology.title }}</h6>
+          <p class="description">{{ selectedTechnology.description }}</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>

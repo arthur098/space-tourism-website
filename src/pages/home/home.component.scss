@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .home-main {
   display: flex;
   flex-direction: column;
@@ -17,7 +19,7 @@
   }
 
   h4 {
-    color: var(--secondary-color);
+    color: var(--secondary-color) !important;
     font-family: var(--barlow-condensed-font);
     font-weight: 200;
     letter-spacing: 2px;
@@ -45,6 +47,7 @@
 }
 
 .btn-explore {
+  cursor: pointer;
   color: var(--black-color);
   background-color: var(--main-font-color);
   border: none;
@@ -72,64 +75,57 @@
   }
 
   .btn-explore {
-    border-radius: 50%;
     padding: 80px 40px;
     font-size: 1.8rem;
+
   }
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 991px) {
+
+  .home-main {
+    flex-direction: row !important;
+    margin: 150px 0 0 130px;
+    justify-content: space-between;
+    align-items: end;
+  }
+
   #welcome-text-section {
-    float: left;
     color: white;
-    margin-top: 30vh;
-    margin-left: 9vw;
     width: 31vw;
-  }
+    align-items: initial;
 
-  #welcome-text-section h4 {
-    font-size: 28px;
-    color: white;
-    font-family: var(--barlow-condensed-font);
-    font-weight: 200;
-    letter-spacing: 2px;
-    margin: 0 0 24px;
-    text-transform: uppercase;
-  }
+    h4 {
+      font-size: 28px;
+      font-family: var(--barlow-condensed-font);
+      font-weight: 200;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-  #welcome-text-section .space-text {
-    font-size: 150px;
-    color: white;
-    font-family: var(--bellefair-font);
-    margin: 0 0 38px;
-    text-transform: uppercase;
-  }
+    .space-text {
+      color: white;
+      font-family: var(--bellefair-font);
+      margin: 0 0 38px;
+      text-transform: uppercase;
+    }
 
-  #welcome-text-section p {
-    font-size: 18px;
-    color: white;
-    font-family: var(--barlow-font);
-    font-weight: 200;
-    letter-spacing: 2px;
-    margin: 0;
+    p {
+      font-size: 18px;
+      font-family: var(--barlow-font);
+      font-weight: 200;
+      letter-spacing: 2px;
+      margin: 0;
+    }
   }
 
   .explore-btn-section {
-    float: right;
     width: 31vw;
-    margin-top: 55vh;
   }
 
   .btn-explore {
-    color: var(--black-color);
-    background-color: var(--main-font-color);
-    border-radius: 50%;
     padding: 100px 50px;
     font-size: 2rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: var(--bellefair-font);
-    transition: .2s ease-out;
   }
 
   .btn-explore:hover {

@@ -15,7 +15,7 @@ export class TechnologyComponent implements OnInit {
   spaceCapsule: TechnologyModel;
 
   technologyList: TechnologyModel[];
-  technologyImageBaseId = '#technology-';
+  technologyImageBaseClass = '.technology-';
 
   ngOnInit(): void {
     this.launchVehicle = new TechnologyModel('LAUNCH VEHICLE', 'A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth\'s surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it\'s quite an awe-inspiring sight on the launch pad!');
@@ -31,15 +31,21 @@ export class TechnologyComponent implements OnInit {
       node.classList.remove('selected');
     });
 
-    document.querySelector(this.technologyImageBaseId + index).scrollIntoView({
-      inline: 'start',
-      behavior: 'smooth',
-      block: 'nearest'
-    });
-
     this.selectedTechnology = this.technologyList[index];
 
     const currentTarget = event.currentTarget as HTMLElement;
     currentTarget.classList.add('selected');
+
+    setTimeout(() => {
+      document.querySelectorAll(this.technologyImageBaseClass + index).forEach((value, key) => {
+        if ((value as HTMLElement).style.display !== 'none') {
+          value.scrollIntoView({
+            inline: 'start',
+            behavior: 'smooth',
+            block: 'nearest'
+          });
+        }
+      });
+    }, 1);
   }
 }

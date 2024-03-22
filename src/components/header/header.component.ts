@@ -17,9 +17,9 @@ export class HeaderComponent implements OnInit {
     this.navMenu = document.querySelector('#nav-menu-list');
     this.htmlBody = document.body;
     const paths = window.location.pathname.split('/');
-    const firstPath: string = paths.splice(1, 2)[0];
-    if (firstPath !== 'home') {
-      this.htmlBody.classList.add(firstPath);
+    const path: string = paths.slice(-1)[0];
+    if (path && path !== 'home') {
+      this.htmlBody.classList.add(path);
     }
   }
 
@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
   }
 
   closeMenu(): void {
-    if (document.getElementById('close-menu').style.display !== 'none') {
+    if (document.getElementById('close-menu').offsetParent !== null) {
       this.navMenu.style.display = 'none';
       this.htmlBody.style.overflow = '';
     }
